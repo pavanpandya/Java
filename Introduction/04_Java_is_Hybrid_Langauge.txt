@@ -1,0 +1,25 @@
+// Java is Hybrid Langauge - Used both Compiler and Interpreter.
+// Let's say we have a program file named - "first.java"
+
+// first.java -> using compiler("javac") it generates -> first.class 
+// It is converted into byte code and not machine code.
+// This byte code is interpreted by JVM.
+// So, When you write "java First". You are asking the JVM(interpreter) to execute the program.
+
+// Steps:
+// We have our program "first.java" which is called as "Source Code".
+// Compiler will read this source code and will confirm that it is error free.  
+// If there are no errors, it will generate a class file eg: "first.class".
+// This file will not have machine code but it will have byte code.
+// Byte Code is not executable program, it is error-free program.
+// We call Java, internally JVM and ask JVM to execute this file.
+// JVM have a interpreter or JIT (Java Just-in-time) Compiler that will convert this byte code into machine code.
+// And thus, get it executed on the hardware.
+// JVM talks with Operating System and it will help program to get executed on hardware.  
+
+
+// Java Program are Platform Independent. -> ByteCode and JVM makes this possible.
+// They follow "WORA" - Write Once Read Anywhere.
+// first.java gets converted to first.class (byte code).
+// Now, it can be executed on any operating system considering it has a JVM.
+// Now, JVM will understand the byte code and convert it to machine code and will talk will its respective OS to run file.

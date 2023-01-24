@@ -1,0 +1,11 @@
+- Simple to learn and easy to understand.
+- Secure - It Cannot be attacked by any virus or malware. Reason - JVM has a security manager/verifier that verifies that the Java code is bug free or malware free and checks if any malicious code is present or not.
+- Portable - Platform Independent.
+- Object-Oriented -  Style of programming.
+- Robust - Java programs never fail or crash even in worst conditions.
+- Multithreading - We can break single program into pieces so that they can run simultaneously.
+- Architecture Neutral - Java can run on any architecture because java is not dependent on hardware.
+- Interpreted Language
+- High Performance
+- Distributed 
+- Dynamic - You can move the running form of program from one machine to another machine.

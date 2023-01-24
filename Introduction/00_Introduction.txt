@@ -1,0 +1,20 @@
+1. JDK vs JRE vs JVM:
+
+- JDK stands for Java Development Kit.
+- It will have Developing Tools, compiler and runtime environment which will
+help us write the Java programs and execute them.
+- When we install JDK, we we get two more things:
+    1. JRE
+    2. JVM
+- So, Once we compile the program, we need Java Runtime Environment (JRE) to 
+execute the program. JRE will contain Java Class Library and JVM. Java Virtual
+Machine (JVM) will actually execute the program.
+
+2. How everything works?
+
+- Let's say we have a program named "first.java". We will used the compiler
+known as "javac" (which is part of JDK) to compile our program. This compiler 
+takes "first.java" and returns "first.class" file. 
+
+- Now, to execute the program we will write "java first". This is done by JRE 
+and internally it used JVM.

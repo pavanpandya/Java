@@ -1,0 +1,87 @@
+When the program in executed in the main memory. It utilize the memory by dividing it into three sections:
+    1. Method Area.
+    2. Stack - Variables and References are stored here.
+    3. Heap - Dynamic Objects are stored here.
+
+Example Code:
+
+class First{
+    
+    public static void main(String args[]){
+        
+        int x=10;
+        int y=20;
+        int z;
+
+        z = x + y;
+
+        String str = new String("Sum is:");
+        System.out.print(str + z); 
+    }
+}
+
+- First, we compile the program using "javac First.java" and it will create "First.class" file.
+- Here, Variables are :- x, y, z, str(reference variable).
+- Here, Object is String("Sum is:").
+
+- Now, when we want to execute the program, "First.class" should come inside main memory. Then only it can be executed by CPU.
+- So, we call this class file and this process is called as "Class Loading".
+- "Class Loader" will bring the program in form of class inside the main memory and it will store methods.
+- We are also using print method, so it will also load print() in "Method Area".
+- Now, interpreter or JIT(Just In Time) Compiler (faster than interpreter) will convert the byte code into machine code and get it executed by CPU.
+- Now, variables are created inside "Stack".
+- It will also create string object inside "Heap".
+- When print() is called, it's own Stack will be created.
+- Literals are stored either in Method Area or a similar kind of section called String Pool.
+
+Note: Whenver a method is called, It's Stack frame is created.
+
+Architecture:
+
+- JVM Memory has 1. Method Area
+                 2. Heap Area
+                 3. Stack
+                 4. PC Registers
+                 5. Native Method Stack
+- There is Class Loader.
+- There is an Execution Engine having Interpreter, JIT Compiler and Garbage Collector.
+- There is a Native Method Interface, Native Method Library and Native Method Stack. 
+
+Working:
+
+1. Class Loader.
+
+- Class Loader has three sections: 1. Loading 
+                                   2. Linking
+                                   3. Initialization
+
+- Loading has again three things:- It will load the classes in method area. Whichever class is loaded, it's object is created insided heap area.  
+    1. Bootstrap Class Loader - All the Library classes of JAVA SC, which are requried will be loaded by Bootstrap Class Loader. 
+    2. Extension Class Loader - They are useful for providing Run-Time Environment by JVM and these classes are loaded by Extension Class Loader.
+    3. Application Class Loader - It will load those classes that belongs to our program.
+
+- Linking has again three things:-
+    1. Verify - It will check whether the Byte Code is perfect java byte code or not. If any problem is found or pattern is different, it will give verify error. Thus, we can say that it will check whether running the code is secure or not.
+    2. Prepare - It will allocate memory for static variables used in our classes.(They are kept inside method area)
+    3. Resolve - Actual Process of Linking - Writing the reference of a method at the place of method call is done by Resolve.
+
+- Initialization - It will initialize all the static variables. Assign given value to them and also execute static blocks.
+
+2. JVM
+
+- Suppose multiple threads are running then each thread will have a separate stack.
+- But all those stacks will used same heap area.
+- For each thread, there will be it's corresponding PC Register.
+- If we are using variables or references from other programming langauge then it will be stored inside Native Method Stack.
+
+3. Execution Engine
+
+- Interpreter will convert bytecode into machine code line-by-line and execute it.
+- But if JIT Compiler is used, then machine code is generated only once and it is executed.
+- So, if there is any repeating code then JIT Compiler is used.
+- Garbage Collector - So if program is creating an object inside heap and is not using it after sometime, then Garbage Collector will take away that object.
+
+4. Native Method Interface
+
+- It will help JAVA Program to interact with native method and its Native Method Library.
+

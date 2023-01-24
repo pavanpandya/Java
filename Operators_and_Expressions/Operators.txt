@@ -1,0 +1,157 @@
+1. Arithmetic Operator:
+
+- +, -, *, /, % -> These operations can be applied on any type of data except boolean.
+- Example: % vs /
+- 10 / 3 -> returns the quotient i.e 3 whereas 10 % 3 -> return the remainder i.e 1.
+- Note: "%" can work with float and double also. (Just don't take decimal in quotient and it will give you remainder).
+- Precedence : 1. *, /, % -> Equal Precedence
+-              2. +, - -> Equal Precedence 
+- Precedence are Left to Right associative.
+- byte + byte or short + short or byte + short or int + int or short + int -> gives result of "int" datatype.
+- Compiler internally convert these datatype into integer and thus, this process is called "Coercion".
+
+-----------------------------------------------------------------------------------------------------------------------
+
+2. Increment and Decrement Operator:
+
+- Two Types:
+    1. Pre-Increment/Pre-Decrement.
+    2. Post-Increment/Post-Decrement.
+- Example:
+    int x=5;
+    ++x;
+    x++;
+- Here, Both are incrementing the value by "1". The Only Difference is in "x++ or x--", First the assignment is done and then, the value of "x" is incremented/decremented by 1 and thus, known as Post-Increment/Post-Decrement. Whereas, in the case of "++x or --x", First the value of "x" is incremented/decremented by 1 and then, the assignmend is done. Thus, known as Pre-Increment/Pre-Decrement.
+- It works on float also. Eg: float x=5.3; x++; then, value of x will be 6.3.
+- It also works on char. Eg: char x='A'; x++; Now, the value of x will be B.
+- Only on boolean type of data, we cannot perform this operation.
+
+Important Note:
+    byte b=5;
+
+    b++; // Gives the output as 6.
+    b=b+1 // Generates an error as when we perform the Arithmetic Operations, the data type of the result in this case changes to "integer" and throws an error when we try to store int in byte type of variable.
+
+-----------------------------------------------------------------------------------------------------------------------
+
+3. Bitwise Operators:
+
+Types:
+    1. AND - &
+    2. OR - |
+    3. NOT - ~
+    4. XOR - ^
+    5. RIGHT SHIFT - >>
+    6. LEFT SHIFT - <<
+    7. UNSIGNED RIGHT SHIFT - >>>
+
+Truth Table of "AND":
+
+A | B | A & b
+0 | 0 | 0
+0 | 1 | 0
+1 | 0 | 0
+1 | 1 | 1
+
+Truth Table of "OR":
+
+A | B | A | b
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 1
+
+Truth Table of "XOR":
+
+A | B | A ^ b
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 0
+
+Important Note: These Bitwise Operations can only be performed on Integer Type Data.
+
+Example:
+
+    int x=10, y=6, z;
+
+------------------------------
+    z = x&y; // AND
+
+    x -> 00001010 // 10
+    y -> 00000110 // 6
+    --------------
+    z -> 00000010 // 2
+
+------------------------------
+    z = x|y; // OR
+    
+    x -> 00001010 // 10
+    y -> 00000110 // 6
+    --------------
+    z -> 00001110 // 14
+
+------------------------------
+    z = x^y; // XOR
+    
+    x -> 00001010 // 10
+    y -> 00000110 // 6
+    --------------
+    z -> 00001100 // 12
+
+------------------------------
+    z = x<<1; // Left Shift
+    
+    x -> 00001010 // 10
+    --------------
+    z -> 00010100 // 20
+
+    Note: When you left shift the bits of any number by one place then, it will double the number meaning it will multiply the number by two. (If you shift by two place, then multiply by 4)
+
+------------------------------
+    z = x>>1; // Right Shift
+    
+    x -> 00001010 // 10
+    --------------
+    z -> 00000101 // 5
+
+    Note: When you right shift the bits of any number by one place then, it will half the number meaning it will multiply the number by "0.5". 
+
+------------------------------
+    int x=-10, z; 
+    
+    10             -> 00001010
+    1's Complement -> 11110101
+                    +        1   
+                  --------------
+    2's Complement -> 11110110 // -10
+ 
+    z = x>>1; // Right Shift
+
+    x -> 11110110 // -10
+    ---------------
+    z -> 10111011 // First bit (Signed Bit) remain unchanged.
+
+    z = x>>>1; // Unsigned Right SHIFT
+
+    x -> 11110110 // -10
+    ---------------
+    z -> 01111011 // 123 // Here, Number becomes positive.
+
+------------------------------
+    int x=10, z;
+    z = ~x;
+    
+    x -> 00001010 // 10
+    ---------------
+    z -> 11110101 // It becomes negative number. Actually it is 11 but there is signed bit, therefore "-11".
+
+    So,
+
+    z              -> 11110101
+    1's Complement -> 00001010
+                    +        1  
+                  ---------------
+    2's Complement -> 00001011 // 11                 
+
+    Important Note: If you take negation of any number "x", then you get ans as "-x".
